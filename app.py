@@ -26,7 +26,7 @@ def get_actual_data(url, api_key):
 st.set_page_config(page_title="Domain Audit Tool", page_icon="🛡️")
 
 st.title("🛡️ Domain Security Audit")
-st.markdown("Перевірка доменів через VirusTotal API (Nocache mode) для Confluence.")
+st.markdown("Перевірка доменів через VirusTotal API.")
 
 # Поля вводу
 api_key = st.text_input("Введіть свій VirusTotal API Key", type="password", help="Отримати ключ можна на сайті virustotal.com")
@@ -88,8 +88,9 @@ if st.button("🚀 Запустити сканування"):
         
         # Кнопка завантаження
         st.download_button(
-            label="📥 Завантажити CSV для Confluence",
+            label="📥 Завантажити CSV",
             data=output.getvalue(),
             file_name="audit_results.csv",
             mime="text/csv"
+
         )
